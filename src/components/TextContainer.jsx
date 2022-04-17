@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
+// import PropType from 'prop-types'
 // let a = document.getElementById("selectOpe.")
 //     let str = a.value;
 //     alert(str);
 
-function TextContainer() {
+function TextContainer(props) {
     const [text, setText] = useState("");
 
     function changeUpperCase() {
@@ -39,9 +40,9 @@ function TextContainer() {
 
     return (
         <>
-            <div className="container my-3">
+            <div className= {`container my-3"`}>
                 {/* <label for="exampleFormControlTextarea1" className="form-label">Example textarea</label> */}
-                <textarea className="form-control" placeholder="Start Typing Here......" id="exampleFormControlTextarea1" rows="10" onChange={handleChanges} value={text}></textarea>
+                <textarea className={`form-control form-control1 bg-${props.mode} text-${props.mode === 'light'?'dark':'light'}`} placeholder="Start Typing Here......" id="exampleFormControlTextarea1" rows="10" onChange={handleChanges} value={text}></textarea>
             </div>
             <div className="container">
                 <button type="button" onClick={changeUpperCase} className="btn btn-primary">UpperCase</button>
@@ -51,8 +52,8 @@ function TextContainer() {
                 <button type="button" onClick={handleExtraSpaces} className="btn btn-primary mx-2">Extra Space</button>
             </div>
             <div className="container">
-                <h2>Your Text Summary </h2>
-                <p>you typed <b> {text.length} </b> letters and <b> {text.split(" ").length} </b> Words</p>
+                <h2 className = {`text-${props.mode === 'light'?'dark':'light'}`}>Your Text Summary </h2>
+                <p className = {`text-${props.mode === 'light'?'dark':'light'}`}>you typed <b> {text.length} </b> letters and <b> {text.split(" ").length-1} </b> Words</p>
             </div>
         </>
     )
