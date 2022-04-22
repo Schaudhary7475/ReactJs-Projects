@@ -46,10 +46,10 @@ function TextContainer(props) {
             </div>
             <div className="container">
                 <button type="button" onClick={changeUpperCase} className="btn btn-primary">UpperCase</button>
-                <button type="button" onClick={changeLowerCase} className="btn btn-primary mx-2">LowerCase</button>
-                <button type="button" onClick={clearText} className="btn btn-primary mx-2">Clear</button>
-                <button type="button" onClick={copyText} className="btn btn-primary mx-2">Copy</button>
-                <button type="button" onClick={handleExtraSpaces} className="btn btn-primary mx-2">Extra Space</button>
+                <button type="button" onClick={changeLowerCase} className="btn btn-primary mx-2 my-2">LowerCase</button>
+                <button type="button" onClick={clearText} className="btn btn-primary mx-2 my-2">Clear</button>
+                <button type="button" onClick={copyText} className="btn btn-primary mx-2 my-2">Copy</button>
+                <button type="button" onClick={handleExtraSpaces} className="btn btn-primary mx-2 my-2">Extra Space</button>
             </div>
             <div className="container">
                 <h2 className = {`text-${props.mode === 'light'?'dark':'light'}`}>Your Text Summary </h2>
